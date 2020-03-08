@@ -31,3 +31,13 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+Route::group([
+
+    'middleware' => 'api'
+
+], function ($router) {
+
+    Route::resource('posts', 'Api\PostController');
+
+});
